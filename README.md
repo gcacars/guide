@@ -1,3 +1,3 @@
-# Meteor Guide
+# Guia do Meteor (em português brasileiro)
 
-[Read the guide!](http://guide.meteor.com/)
+[Leia o guia!](http://guide.meteor.com/)
