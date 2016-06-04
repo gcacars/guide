@@ -1,95 +1,95 @@
 ---
-title: Introduction
+title: Introdução
 order: 0
-description: This is the guide for using Meteor, a full-stack JavaScript platform for developing modern web and mobile applications.
+description: Este é um guia para usar o Meteor, uma plataforma JavaScript completa para desenvolver modernas aplicações web e mobile.
 ---
 
 <!--  XXX: note that this content is somewhat duplicated on the docs, and should be updated in parallel -->
-<h2 id="what-is-meteor">What is Meteor?</h2>
+<h2 id="what-is-meteor">O que é o Meteor?</h2>
 
-Meteor is a full-stack JavaScript platform for developing modern web and mobile applications. Meteor includes a key set of technologies for building connected-client reactive applications, a build tool, and a curated set of packages from the Node.js and general JavaScript community.
+Meteor é uma plataforma JavaScript completa para desenvolver modernas aplicações web e mobile. Meteor inclui uma gama de tecnologias para construir aplicações reativas conectadas ao cliente, uma ferramenta para builds, e amparado por um conjunto de pacotes do Node.js e da comunidade JavaScript em geral.
 
-- Meteor allows you to develop in **one language**, JavaScript, in all environments: application server, web browser, and mobile device.
+- Meteor te permite desenvolver usando **uma linguagem**, JavaScript, em todos os ambientes: servidor da aplicação, o navegador, e o dispositivo móvel.
 
-- Meteor uses **data on the wire**, meaning the server sends data, not HTML, and the client renders it.
+- Meteor usa a idéia de **dados pela rede**, o que significa que o servidor envia dados, não o HTML, e o cliente renderiza isso.
 
-- Meteor **embraces the ecosystem**, bringing the best parts of the extremely active JavaScript community to you in a careful and considered way.
+- Meteor **envolve o ecossistema**, trazendo para você as melhores partes da extremamente ativa comunidade JavaScript com todo cuidado e consideração.
 
-- Meteor provides **full stack reactivity**, allowing your UI to seamlessly reflect the true state of the world with minimal development effort.
+- Meteor provê **completa reatividade**, permitindo que sua IU (ou UI em inglês) perfeitamente reflita o verdadeiro estado do mundo com mínimo esforço de desenvolvimento.
 
-<h2 id="quickstart">Quick start</h2>
+<h2 id="quickstart">Começando</h2>
 
-Meteor supports [OS X, Windows, and Linux](https://www.meteor.com/install).
+Meteor suporta [OS X, Windows, e Linux](https://www.meteor.com/install).
 
-On Windows?  [Download the official Meteor installer here](https://install.meteor.com/windows).
+No Windows?  [Baixe o instalador oficial do Meteor aqui](https://install.meteor.com/windows).
 
-On OS X or Linux?  Install the latest official Meteor release from your terminal:
+No OS X ou Linux? Instale a última versão do Meteor digitando no terminal:
 
 ```bash
 curl https://install.meteor.com/ | sh
 ```
 
-The Windows installer supports Windows 7, Windows 8.1, Windows Server
-2008, and Windows Server 2012.  The command line installer supports Mac OS X
-10.7 (Lion) and above, and Linux on x86 and x86_64 architectures.
+O instalador do Windows suporta Windows 7, Windows 8.1, Windows Server
+2008, e Windows Server 2012.  O instalador por linha de comando suporta Mac OS X
+10.7 (Lion) e recentes, e Linux nas arquiteturas x86 e x86_64.
 
-Once you've installed Meteor, create a project:
+Uma vez que você instalou o Meteor, crie um projeto:
 
 ```bash
-meteor create myapp
+meteor create meuapp
 ```
 
-Run it locally:
+Execute ele localmente:
 
 ```bash
-cd myapp
+cd meuapp
 meteor npm install
 meteor
 # Meteor server running on: http://localhost:3000/
 ```
 
-> Meteor comes with npm bundled so that you can type `meteor npm` without worrying about installing it yourself. If you like, you can also use a globally installed npm to manage your packages.
+> Meteor vem com o npm junto, logo se você pode digitar `meteor npm` sem se preocupar por instalá-lo você mesmo. Se você preferir, você ainda pode usar o npm global instalado para gerenciar seus pacotes.
 
-<h2 id="learning-more">Meteor resources</h2>
+<h2 id="learning-more">Recursos do Meteor</h2>
 
-1. The place to get started with Meteor is the [official tutorial](https://www.meteor.com/tutorials/blaze/creating-an-app).
+1. O lugar para você começar com o Meteor é o [tutorial oficial](https://www.meteor.com/tutorials/blaze/creating-an-app).
 
-2. [Stack Overflow](http://stackoverflow.com/questions/tagged/meteor) is the best place to ask (and answer!) technical questions. Be sure to add the meteor tag to your question.
+2. [Stack Overflow (em inglês)](http://stackoverflow.com/questions/tagged/meteor) ou [Stack Overflow (em português)](http://pt.stackoverflow.com/questions/tagged/meteor) é o melhor lugar para perguntar (e responder!) questões técnicas. Tenha certeza de adicionar a tag meteor na sua questão.
 
-3. Visit the [Meteor discussion forums](https://forums.meteor.com) to announce projects, get help, talk about the community, or discuss changes to core.
+3. Visite o [fórum de discussão do Meteor (em inglês)](https://forums.meteor.com) para anunciar projetos, obter ajuda, falar sobre a comunidade, or discutir mudanças no núcelo.
 
-4. The [Meteor docs](https://docs.meteor.com) is the best place to find the core API documentation of the platform.
+4. O [Meteor docs (em inglês)](https://docs.meteor.com) é o melhor lugar para encontrar a documentação da API principal da plataforma.
 
-5. [Atmosphere](https://atmospherejs.com) is the repository of community packages designed especially for Meteor.
+5. [Atmosphere (em inglês)](https://atmospherejs.com) é o repositório de pacotes da comunidade desenhados especialmente para o Meteor.
 
-6. [Awesome Meteor](https://github.com/Urigo/awesome-meteor) is a community-curated list of [packages](https://github.com/Urigo/awesome-meteor#getting-started) and [resources](https://github.com/Urigo/awesome-meteor#resources).
+6. [Awesome Meteor (em inglês)](https://github.com/Urigo/awesome-meteor) é uma lista tratadad de [pacotes](https://github.com/Urigo/awesome-meteor#getting-started) e [recursos](https://github.com/Urigo/awesome-meteor#resources).
 
-<h2 id="what-is-it">What is the Meteor Guide?</h2>
+<h2 id="what-is-it">O que é o guia do Meteor?</h2>
 
-This is a set of articles outlining opinions on best-practice application development using the [Meteor](https://meteor.com) platform. Our aim is to cover patterns that are common to the development of all modern web and mobile applications, so many concepts documented here are not necessarily Meteor specific and could be applied to any application built with a focus on modern, interactive user interfaces.
+É uma lista de artigos descrevendo opiniões das melhores práticas de desenvolvimento de aplicações usando a plataforma [Meteor](https://meteor.com). O nosso objetivo é cobrir padrões que são comuns no desenvolvimento de todas as aplicações web e mobile modernas, logo muitos conceitos documentados aqui não são necessariamente específicas do Meteor e podem ser aplicadas para qualquer aplicação focada interfaces de usuário modernas e interativas.
 
-Nothing in the Meteor guide is *required* to build a Meteor application---you can certainly use the platform in ways that contradict the principles and patterns of the guide. However, the guide is an attempt to document best practices and community conventions, so we hope that the majority of the Meteor community will benefit from adopting the practices documented here.
+Nada no guia do Meteor é *obrigatório* para se fazer uma aplicação Meteor---você certamente pode usar a plataforma de forma que contradiga os princípios e padrões deste guia. Entretato, o guia é uma tentativa de documentar as melhores práticas e convenções da comunidade, logo esperamos que a maioria da comunidade Meteor se beneficiará em adotar as práticas documentadas aqui.
 
-The APIs of the Meteor platform are available at the [docs site](https://docs.meteor.com), and you can browse community packages on [atmosphere](https://atmospherejs.com).
+As APIs da plataforma Meteor estão disponíveis no site da [documentação (em inglês)](https://docs.meteor.com), e você pode procurar pacotes da comunidade no [atmosphere (em inglês)](https://atmospherejs.com).
 
-<h3 id="audience">Target audience</h3>
+<h3 id="audience">Público-alvo</h3>
 
-The guide is targeted towards intermediate developers that have some familiarity with JavaScript, the Meteor platform, and web development in general. If you are just getting started with Meteor, we recommend starting with the [official tutorial](https://www.meteor.com/tutorials/blaze/creating-an-app).
+O guia é voltado para desenvolvedores intermediários que tem alguma familiaridade com o JavaScript, e plataforma Meteor, e desenvolvimento web em geral. Se vocês está apenas começando com o Meteor, nós recomendamos começar pelo [tutorial oficial (em inglês)](https://www.meteor.com/tutorials/blaze/creating-an-app).
 
-<h3 id="example-app">Example app</h3>
+<h3 id="example-app">Aplicação de exemplo</h3>
 
-Many articles reference the Todos example application. This code is being actively developed alongside the guide. You can see the latest source code for the app, and file issues or make suggestions via pull request at its [GitHub repository](https://github.com/meteor/todos).
+Muitos artigos referenciam a aplicação de exemplo Todos (lista de tarefas em inglês). Esse codígo tem sido ativamente desenvolvido ao longo do guia. Você pode vêr o último código fonte da aplicação, os problemas e fazer sugestões por pull request no [repositório GitHub (em inglês)](https://github.com/meteor/todos).
 
-<h2 id="guide-concepts">Guide development</h2>
+<h2 id="guide-concepts">Desenvolvimento do Guia</h2>
 
-<h3 id="contributing">Contributing</h3>
+<h3 id="contributing">Contribuindo</h3>
 
-Ongoing Meteor Guide development takes place **in the open** [on GitHub](https://github.com/meteor/guide). We encourage pull requests and issues to discuss problems with and changes that could be made to the content. We hope that keeping our process open and honest will make it clear what we plan to include in the guide and what changes will be coming in future Meteor versions.
+Desenvolver o Guia do Meteor tem um lugar **aberto** [no GitHub](https://github.com/meteor/guide). Nós encorajamos pull requests, discussões de problemas e mudanças que podem ser feitas no conteúdo. Esperamos que manter o nosso processo aberto e honesto irá tornar mais claro o que pretende incluir no guia e que mudanças virão em futuras versões do Meteor.
 
-<h3 id="goals">Goals of the project</h3>
+<h3 id="goals">Objetivos do projeto</h3>
 
-The decisions made and practices outlined in the guide must necessarily be **opinionated**. Certain best practices will be highlighted and other valid approaches ignored. We aim to reach community consensus around major decisions but there will always be other ways to solve problems when developing your application. We believe it's important to know what the "standard" way to solve a problem is before branching out to other options. If an alternate approach proves itself superior, then it should make its way into a future version of the guide.
+As decisões e práticas descritas no guia deve ser necessariamente **opinativas**. Algumas melhores práticas serão destacadas enquanto outras abordagens válidas serão ignoradas. O nosso objetivo é chegar a um consenso na comunidade em torno de grandes decisões, mas sempre haverá outras maneiras de resolver problemas quanto ao desenvolvimento de sua aplicação. Acreditamos que é importante saber que a forma "padrão" para resolver um problema, é antes ouvir outras opiniões. Se uma abordagem alternativa se prova superior, então ela deverá ser usada dessa forma numa futura versão do guia.
 
-An important function of the guide is to **shape future development** in the Meteor platform. By documenting best practices, the guide shines a spotlight on areas of the platform that could be better, easier, or more performant, and thus will be used to focus a lot of future platform choices.
+Uma função importante do guia é **moldar o desenvolvimento futuro** na plataforma Meteor. Ao documentar as melhores práticas, o guia chama atenção para as áreas da plataforma que poderiam ser melhores, fáceis, ou mais peromáticas, e assim, será utilizada para concentrar uma grande quantidade de futuras escolhas na plataforma.
 
-Similarly, gaps in the platform highlighted by the guide can often be plugged by **community packages**; we hope that if you see an opportunity to improve the Meteor workflow by writing a package, that you take it! If you're not sure how best to design or architect your package, reach out on the forums and start a discussion.
+De forma similar, lacunas na plataforma destacas pelo guia muitas vezes podem ser resolvidor por **pacotes da comunidade**; esperamos que se você vê uma oportunidade de melhorar o fluxo de trabalho Meteor escrevendo um pacote, você pode fazê-lo! Se você não tem certeza sobre a melhor forma de projetar ou fazer a arquitetura do seu pacote, vá nos fóruns e inicie uma discussão.
