@@ -1,100 +1,98 @@
 ---
-title: Code Style
+title: Estilo de codificação
 order: 1
-description: Suggested style guidelines for your code.
+description: Orientações de estilo sugeridas para seu código.
 discourseTopicId: 20189
 ---
 
-After reading this article, you'll know:
+Depois de ler este artigo, você saberá:
+1. Por que é uma boa ideia ter um estilo consistente de codificação.
+2. Qual o guia de estilo que nós recomendamos para código JavaScript
+3. Como configurar o ESLint para checar seu estilo de codificação automaticamente.
+4. Sugestões de estilos para padrões específicos do Meteor, como Métodos, publicações, e mais.
 
-1. Why it's a good idea to have consistent code style
-2. Which style guide we recommend for JavaScript code
-3. How to set up ESLint to check code style automatically
-4. Style suggestions for Meteor-specific patterns, such as Methods, publications, and more
+<h2 id="benefits-style">Benefícios de um estilo consistente de codificação</h2>
 
+Horas incontáveis foram perdidas por desenvolvedores ao longo dos anos argumentando sobre aspas duplas vs. aspas simples, quando colocar colchetes, quantos espaços colocar, e todos os tipos de outras questões cosméticas de estilo. Todas essas são questões que têm na melhor das hipóteses uma relação tangencial à qualidade do código, mas são muito fáceis de haverem opiniões diferentes pois são muito visuais.
 
-<h2 id="benefits-style">Benefits of consistent style</h2>
+Enquanto não é necessariamente importante se seu código usa aspas simples ou dupla para strings literais, há enormes benefícios de se fazer a decisão uma vez e ter isso consistente através de toda sua organização. Os benefícios também sem aplicam às comunidades de desenvolvimento Meteor e Javascript como um todo.
 
-Countless hours have been spent by developers throughout the years arguing over single vs. double quotes, where to put brackets, how many spaces to type, and all kinds of other cosmetic code style questions. These are all questions that have at best a tangential relationship to code quality, but are very easy to have opinions about because they are so visual.
+<h3 id="easy-to-read">Código fácil de ler</h3>
 
-While it's not necessarily important whether your code base uses single or double quotes for string literals, there are huge benefits to making that decision once and having it be consistent across your organization. These benefits also apply to the Meteor and JavaScript development communities as a whole.
-
-<h3 id="easy-to-read">Easy to read code</h3>
-
-The same way that you don't read English sentences one word at a time, you don't read code one token at a time. Mostly you just look at the shape of a certain expression, or the way it highlights in your editor, and assume what it does. If the style of every bit of code is consistent, that ensures that bits of code that look the same actually _are_ the same - there isn't any hidden punctuation or gotchas that you don't expect, so you can focus on understanding the logic instead of the symbols. One example of this is indentation - while in JavaScript, indentation is not meaningful, it's helpful to have all of your code consistently indented so that you don't need to read all of the brackets in detail to see what is going on.
+Da mesma maneira que você não lê uma palavra por vez em sentenças em português, você não lê o código por um marcador de cada vez. A maioria apenas olha a forma de uma certa expressão, ou o jeito que ela brilha no seu editor, e entende o que faz. Se o estilo de cada pedaço do código é consistente, isso garante que os pedaços de código que se parecem os mesmos _são_ os mesmos - não há nenhum pontuação oculta ou pegadinhas que você não espera, indentação não é significativo, mas é útil para se ter todo seu código consistentemente indentado assim você não terá que ler todos os colchetes em detalhes para ver o que está acontecendo.
 
 ```js
-// This code is misleading because it looks like both statements
-// are inside the conditional.
-if (condition)
-  firstStatement();
-  secondStatement();
+// Este código engana porque eles parecem estar
+// dentro da mesma condição
+if (condicao)
+  primeiraDeclaracao();
+  segundaDeclaracao();
 ```
 
 ```js
-// Much clearer!
-if (condition) {
-  firstStatement();
+// Bem melhor!
+if (condicao) {
+  primeiraDeclaracao();
 }
 
-secondStatement();
+segundaDeclaracao();
 ```
 
-<h3 id="automatic-error-checking">Automatic error checking</h3>
+<h3 id="automatic-error-checking">Checagem de erro automática</h3>
 
-Having a consistent style means that it's easier to adopt standard tools for error checking. For example, if you adopt a convention that you must always use `let` or `const` instead of `var`, you can now use a tool to ensure all of your variables are scoped the way you expect. That means you can avoid bugs where variables act in unexpected ways. Also, by enforcing that all variables are declared before use, you can easily catch typos before even running any code!
+Ter um estilo consistente significa que é fácil adotar ferramentas padrões para checar os erros. Por exemplo, se você adotar uma convenção de que você sempre deve usar `let` ou `const` ao invés de `var`, pode usar agora uma ferramenta para ter certeza que todas as variáveis estão da maneira esperada. Isso significa que você pode evitar erros onde as variáveis atuam de forma inesperada. E também, por forçar que todas as variáveis estejam declaradas antes de usar, você pode facilmente pegar erros de digitação antes mesmo de executar qualquer código!
 
-<h3 id="deeper-understanding">Deeper understanding</h3>
+<h3 id="deeper-understanding">Compreensão profunda</h3>
 
-It's hard to learn everything about a programming language at once. For example, programmers new to JavaScript often struggle with the `var` keyword and function scope. Using a community-recommended coding style with automatic linting can warn you about these pitfalls proactively. This means you can jump right into coding without learning about all of the edge cases of JavaScript ahead of time.
+É difícil de aprender tudo sobre uma linguagem de programação de uma só vez. Por exemplo, programadores novatos no JavaScript tem uma guerra com a palavra `var` e o escopo da função. Usando um estilo de codificação recomendado pela comunidade com validação automática, pode avisá-lo sobre essas armadilhas de forma proativa. Quer dizer que você pode pular direto para a codificação sem aprender tudo antes do tempo sobre os detalhes do JavaScript.
 
-As you write more code and come up against the recommended style rules, you can take that as an opportunity to learn more about your programming language and how different people prefer to use it.
+Conforme você escreve mais código e em cima das regras de estilo recomendadas, você pode tomar isso como uma oportunidade para aprender mais sobre a sua linguagem de programação e como diferentes pessoas preferem usá-la.
 
-<h2 id="javascript">JavaScript style guide</h2>
+<h2 id="javascript">Guia de estilos JavaScript</h2>
 
-Here at Meteor, we strongly believe that JavaScript is the best language to build web applications, for a variety of reasons. JavaScript is constantly improving, and the standards around ES2015 have really brought together the JavaScript community. Here are our recommendations about how to use ES2015 JavaScript in your app today.
+Aqui no Meteor, nós acreditamos fortemente que o JavaScript é a melhor linguagem para construir aplicações web, por várias razões. JavaScript está em constante aperfeiçoamento, e os padrões em torno do ES2015 realmente reuniu a comunidade JavaScript. Aqui vão nossas recomendações para usar hoje o JavaScript ES2015 no seu aplicativo.
 
 ![](images/ben-es2015-demo.gif)
 
-> An example of refactoring from JavaScript to ES2015
+> Exemplo de código refeito do JavaScript para o ES2015
 
-<h3 id="ecmascript">Use the `ecmascript` package</h3>
+<h3 id="ecmascript">Use o pacote `ecmascript`</h3>
 
-ECMAScript, the language standard on which every browser's JavaScript implementation is based, has moved to yearly standards releases. The newest complete standard is ES2015, which includes some long-awaited and very significant improvements to the JavaScript language. Meteor's `ecmascript` package compiles this standard down to regular JavaScript that all browsers can understand using the [popular Babel compiler](https://babeljs.io/). It's fully backwards compatible to "regular" JavaScript, so you don't have to use any new features if you don't want to. We've put a lot of effort into making advanced browser features like source maps work great with this package, so that you can debug your code using your favorite developer tools without having to see any of the compiled output.
+ECMAScript, a linguagem padrão que todo navegador se baseia para implementar o JavaScript, mudou para lançamentos anuais de padrões. O padrão completo mais novo é o ES2015, que inclui algumas melhorias muito aguardadas e significativas para a linguagem JavaScript. O pacote `ecmascript` do Meteor compila esse padrão para o JavaScript regular que todos os navegadores possam entender, usando o [popular compilador Babel (em inglês)](https://babeljs.io/). É totalmente compatível com código "regular" do JavaScript, logo você não precisa usar nenhuma nova funcionalidade se não quiser. Colocamos muitos esforços em fazer funcionalidades avançadas do navegador como mapeamento do fonte trabalhar bem com esse pacote, assim você pode depurar o código usando suas ferramentas de desenvolvimento favoritas sem ter que ver alguma saída compilada.
 
-The `ecmascript` package is included in all new apps and packages by default, and compiles all files with the `.js` file extension automatically. See the [list of all ES2015 features supported by the ecmascript package](https://docs.meteor.com/packages/ecmascript.html#Supported-ES2015-Features).
+O pacote `ecmascript` é incluído em todos novos aplicativos e pacotes por padrão, e compila todos arquivos com a extensão `.js` automaticamente. Veja a [lista de todas as funcionalidades suportadas pelo pacote ecmascript (em inglês)](https://docs.meteor.com/packages/ecmascript.html#Supported-ES2015-Features).
 
-To get the full experience, you should also use the `es5-shim` package which is included in all new apps by default. This means you can rely on runtime features like `Array#forEach` without worrying about which browsers support them.
+Para ter uma experiência completa, você também pode usar o pacote `es5-shim` que é incluído em todos os novos aplicativos por padrão. Isso quer dizer que você pode usar funcionalidade de execução como `Array#forEach` sem se preocupar quais navegadores suportam isso.
 
-All of the code samples in this guide and future Meteor tutorials will use all of the new ES2015 features. You can also read more about ES2015 and how to get started with it on the Meteor Blog:
+Todos os códigos de exemplo nesse guia e em futuros tutoriais do Meteor usuarão todas as novas funcionalidades do ES2015. Você pode ler mais sobre o ES2015 e como começar em nosso Blog do Meteor:
 
-- [Getting started with ES2015 and Meteor](http://info.meteor.com/blog/es2015-get-started)
-- [Set up Sublime Text for ES2015](http://info.meteor.com/blog/set-up-sublime-text-for-meteor-es6-es2015-and-jsx-syntax-and-linting)
-- [How much does ES2015 cost?](http://info.meteor.com/blog/how-much-does-es2015-cost)
+- [Começando com Meteor e ES2015 (em inglês)](http://info.meteor.com/blog/es2015-get-started)
+- [Configurar o Sublime Text para o  ES2015 (em inglês)](http://info.meteor.com/blog/set-up-sublime-text-for-meteor-es6-es2015-and-jsx-syntax-and-linting)
+- [Quanto custa o ES2015? (em inglês)](http://info.meteor.com/blog/how-much-does-es2015-cost)
 
-<h3 id="style-guide">Follow a JavaScript style guide</h3>
+<h3 id="style-guide">Siga um guia de estilo JavaScript</h3>
 
-We recommend choosing and sticking to a JavaScript style guide and enforcing it with tools. A popular option that we recommend is the [Airbnb style guide](https://github.com/airbnb/javascript) with the ES6 extensions (and optionally React extensions).
+Recomendamos escolher e aderir a um guia de estilos JavaScript e aplicá-la com as ferramentas. Uma opção popular que recomendamos é o [Guia de estilos do Airbnb (em inglês)](https://github.com/airbnb/javascript) com as extensões do ES6 (e opcionalmente as extensões para o React). Uma versão do guia para o JavaScript anterior ao ES2015 está [disponível em português](https://github.com/armoucar/javascript-style-guide).
 
-<h2 id="eslint">Check your code with ESLint</h2>
+<h2 id="eslint">Verifique seu código com ESLint</h2>
 
-"Code linting" is the process of automatically checking your code for common errors or style problems. For example, ESLint can determine if you have made a typo in a variable name, or some part of your code is unreachable because of a poorly written `if` condition.
+"Code linting" (em inglês) é o processo de automaticamente verificar seu código por erros comuns ou problemas de estilo. Por exemplo, ESLint pode determinar se você cometeu um erro de digitação no nome de uma variável, ou alguma parte do seu código está inacessível por culpa de um `if` mal escrito.
 
-We recommend using the [Airbnb eslint configuration](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) which verifies the Airbnb styleguide.
+Recomendamos usar a [configuração ESLint do Airbnb (em inglês)](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) que verifica o guia de estilos do  Airbnb.
 
-Below, you can find directions for setting up automatic linting at many different stages of development. In general, you want to run the linter as often as possible, because it's the fastest and easiest way to identify typos and small errors.
+Abaixo, você pode encontrar instruções para configurar um linting automático em muitos estágios diferentes de desenvolvimento. Em geral, você deseja executar o linter o mais rápido possível, porque é a maneira mais rápida e mais fácil de identificar a digitação e pequenos erros.
 
-<h3 id="eslint-installing">Installing and running ESLint</h3>
+<h3 id="eslint-installing">Instalando e executando o ESLint</h3>
 
-To setup ESLint in your application, you can install the following [npm](https://docs.npmjs.com/getting-started/what-is-npm) packages:
+Para configurar o ESLint na sua aplicação, você pode instalar os seguintes pacotes [npm](https://docs.npmjs.com/getting-started/what-is-npm):
 
 ```
 meteor npm install --save-dev eslint-config-airbnb eslint-plugin-import eslint-plugin-meteor eslint-plugin-react eslint-plugin-jsx-a11y eslint
 ```
 
-> Meteor comes with npm bundled so that you can type meteor npm without worrying about installing it yourself. If you like, you can also use a globally installed npm command.
+> Meteor vem com um npm junto, logo você pode digitar meteor npm sem se preocupar em instalá-lo. Se você desejar, você ainda pode usar a instalação global do comando npm.
 
-You can also add a `eslintConfig` section to your `package.json` to specify that you'd like to use the Airbnb config, and to enable [ESLint-plugin-Meteor](https://github.com/dferber90/eslint-plugin-meteor). You can also setup any extra rules you want to change, as well as adding a lint npm command:
+Você pode adicionar ainda uma seção `eslintConfig` no seu `package.json` para especificar que você gostaria de usar a configuração do Airbnb, e para ativar o [ESLint-plugin-Meteor](https://github.com/dferber90/eslint-plugin-meteor). E ainda pode configurar qualquer regra adicional que você quiser alterar, como também adicionar um comando lint ao npm:
 
 ```
 {
@@ -116,13 +114,13 @@ You can also add a `eslintConfig` section to your `package.json` to specify that
 }
 ```
 
-To run the linter, you can now simply type:
+Para executar o linter, você pode simplesmente digitar:
 
 ```bash
 meteor npm run lint
 ```
 
-If you get errors from the default `meteor create myapp` such as:
+Se você tiver erros do comando `meteor create meuapp` como:
 
 ```bash
 /opt/www/sites/me/myapp/client/main.js
@@ -134,7 +132,7 @@ If you get errors from the default `meteor create myapp` such as:
   1:24  error  Unable to resolve path to module 'meteor/meteor'  import/no-unresolved
 ```
 
-then you can quiet them by adding to `rules` in `eslintConfig`, for instance:
+então você pode silenciá-los adicionando à `rules` (regras) no `eslintConfig`, por exemplo:
 
 ```
 {
@@ -154,9 +152,9 @@ then you can quiet them by adding to `rules` in `eslintConfig`, for instance:
 ```
 
 
-For more details, read the [Getting Started](http://eslint.org/docs/user-guide/getting-started) directions from the ESLint website.
+Para mais detalhes, leia as direções do [Começando (em inglês)](http://eslint.org/docs/user-guide/getting-started) do site do ESLint.
 
-<h3 id="eslint-editor">Integrating with your editor</h3>
+<h3 id="eslint-editor">Integrando com seu editor</h3>
 
 Linting is the fastest way to find potential bugs in your code. Running a linter is usually faster than running your app or your unit tests, so it's a good idea to run it all the time. Setting up linting in your editor can seem annoying at first since it will complain often when you save poorly-formatted code, but over time you'll develop the muscle memory to just write well-formatted code in the first place. Here are some directions for setting up ESLint in different editors:
 
