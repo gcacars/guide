@@ -6,6 +6,7 @@ discourseTopicId: 20189
 ---
 
 Depois de ler este artigo, você saberá:
+
 1. Por que é uma boa ideia ter um estilo consistente de codificação.
 2. Qual o guia de estilo que nós recomendamos para código JavaScript
 3. Como configurar o ESLint para checar seu estilo de codificação automaticamente.
